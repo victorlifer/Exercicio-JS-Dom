@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Cine JS: fILME EM CARTAZ</h1>
+    <div>
+        <form>
+            <p>
+                Titulo do Filme:
+                <input type="text" id="inTitulo" required>
+            </p>
+            <p>Duração (mim):
+                <input type="text" id="inMin" required>
+            </p>
+            <input type="submit" value="Converter em Horas e Minutos">
+        </form>
+    </div>
+
+    <h3></h3>
+    <h4></h4>
+    <!--codigo js-->
+    <script>
+
+        const formulario_one = document.getElementById("form");
+        const respostaDe_duracao = document.getElementById("h3");
+        const respostaDe_duracao_two = document.getElementById("h4");
+
+        formulario_one.addEventListener("submit", (e) => {
+            const Titulo = formulario_one.inTitulo.value
+            const duracao = Number(formulario_one.inMin.value)
+
+            const h = Math.floor(duracao / 60)
+            const minutos = duracao % 60
+
+            respostaDe_duracao.innerTex = Titulo
+            respostaDe_duracao_two.innerText = `${h} horas  e ${minutos} minutos`
+
+            e.preventDefault();
+        })
+
+    </script>
+</body>
+
+</html>
